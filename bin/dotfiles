@@ -45,8 +45,11 @@ function is_osx() {
 function is_ubuntu() {
   [[ "$(cat /etc/issue 2> /dev/null)" =~ Ubuntu ]] || return 1
 }
+function is_mint() {
+  [[ "$(cat /etc/issue 2> /dev/null)" =~ Mint ]] || return 1
+}
 function get_os() {
-  for os in osx ubuntu; do
+  for os in osx ubuntu mint; do
     is_$os; [[ $? == ${1:-0} ]] && echo $os
   done
 }
@@ -266,9 +269,9 @@ if [[ ! "$(type -P gcc)" ]] && is_osx; then
   exit 1
 fi
 
-# If Git is not installed, install it (Ubuntu only, since Git comes standard
-# with recent XCode or CLT)
-if [[ ! "$(type -P git)" ]] && is_ubuntu; then
+# If Git is not installed, install it (Ubuntu  and Mint only,
+# since Git comes standard with recent XCode or CLT)
+if [[ ! "$(type -P git)" ]] && (is_ubuntu || is_mint); then
   e_header "Installing Git"
   sudo apt-get -qq install git-core
 fi
