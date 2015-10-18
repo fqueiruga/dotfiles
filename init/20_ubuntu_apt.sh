@@ -49,7 +49,7 @@ fi
 # Update APT.
 e_header "Updating APT"
 sudo apt-get -qq update
-sudo apt-get -qq dist-upgrade
+sudo apt-get -qq upgrade
 
 # Install APT packages.
 # fontconfig-infinality, java and atom come from PPAs
