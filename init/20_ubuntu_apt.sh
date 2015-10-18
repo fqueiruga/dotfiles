@@ -34,7 +34,6 @@ fi
 
 # Install PPAs
 ppas=(
-  "ppa:no1wantdthisname/ppa"
   "ppa:webupd8team/atom"
   "ppa:webupd8team/java"
 )
@@ -68,7 +67,6 @@ packages=(
   telnet
   tree
   oracle-java9-installer
-  fontconfig-infinality
   atom
 )
 
