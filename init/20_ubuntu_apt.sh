@@ -32,12 +32,27 @@ EOF
   fi
 fi
 
+# Install PPAs
+ppas=(
+  "ppa:no1wantdthisname/ppa"
+  "ppa:webupd8team/atom"
+  "ppa:webupd8team/java"
+)
+
+if (( ${#ppas[@]} > 0 )); then
+  e_header "Intalling PPAs: ${ppas[*]}"
+  for ppa in "${ppas[@]}"; do
+    sudo add-apt-repository -y ppa
+  done
+fi
+
 # Update APT.
 e_header "Updating APT"
 sudo apt-get -qq update
 sudo apt-get -qq dist-upgrade
 
 # Install APT packages.
+# fontconfig-infinality, java and atom come from PPAs
 packages=(
   ansible
   build-essential
@@ -52,6 +67,9 @@ packages=(
   sl
   telnet
   tree
+  oracle-java9-installer
+  fontconfig-infinality
+  atom
 )
 
 packages=($(setdiff "${packages[*]}" "$(dpkg --get-selections | grep -v deinstall | awk '{print $1}')"))
