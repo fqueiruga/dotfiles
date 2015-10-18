@@ -32,19 +32,6 @@ EOF
   fi
 fi
 
-# Install PPAs
-ppas=(
-  "ppa:webupd8team/atom"
-  "ppa:webupd8team/java"
-)
-
-if (( ${#ppas[@]} > 0 )); then
-  e_header "Intalling PPAs: ${ppas[*]}"
-  for ppa in "${ppas[@]}"; do
-    sudo add-apt-repository -y ppa
-  done
-fi
-
 # Update APT.
 e_header "Updating APT"
 sudo apt-get -qq update
@@ -66,8 +53,6 @@ packages=(
   sl
   telnet
   tree
-  oracle-java9-installer
-  atom
 )
 
 packages=($(setdiff "${packages[*]}" "$(dpkg --get-selections | grep -v deinstall | awk '{print $1}')"))
