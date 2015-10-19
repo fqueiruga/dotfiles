@@ -33,7 +33,7 @@ autocmd vimrc ColorScheme * :hi link multiple_cursors_visual Visual
 
 let g:molokai_italic=0
 colorscheme molokai
-set background=dark
+set background=light
 
 " Visual settings
 set cursorline " Highlight current line
