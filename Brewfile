@@ -8,8 +8,9 @@ tap 'homebrew/bundle'
 # Binaries
 brew 'git'
 # brew 'mas' # Mac App Store manager
+brew 'yt-dlp'
 
 # Fonts
 cask 'font-fira-code'
-cask 'font-jetbrains-mono'
+#cask 'font-jetbrains-mono'
 

@@ -2,3 +2,6 @@
 	name = fqueiruga
 	email = felix.queiruga@gmail.com
 
+[core]
+	ignorecase = false
+
