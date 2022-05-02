@@ -10,16 +10,22 @@ echo "Setting up your Mac..."
 #  eval "$(/opt/homebrew/bin/brew shellenv)"
 #fi
 
+# Run install scripts
+source $DOTFILES/scripts/nmv_install.zsh
+
 function apply_symlinks {
-	rm -rf $HOME/$1
-	ln -s $HOME/.dotfiles/$1 $HOME/$1
+	target_file=${2:-$1}
+	rm -rf $HOME/$target_file
+	ln -s $HOME/.dotfiles/$1 $HOME/$target_file
 }
 
 # Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
 apply_symlinks ".zshrc"
 
-# Removes .gitconfig from $HOME (if it exists) and symlinks the .gitconfig file from the .dotfiles
 apply_symlinks ".gitconfig"
+
+apply_symlinks "config/starship.toml" ".config/starship.toml"
+
 #rm -rf $HOME/.zshrc
 #ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
 
@@ -30,4 +36,10 @@ apply_symlinks ".gitconfig"
 # Install all our dependencies with bundle (See Brewfile)
 #brew tap homebrew/bundle
 brew bundle install --file $DOTFILES/Brewfile
+
+# Load configuration
+source $HOME/.zshrc
+
+# Run postinstall scripts
+source $DOTFILES/scripts/nvm_postinstall.zsh
 

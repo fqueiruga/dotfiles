@@ -8,7 +8,8 @@ tap 'homebrew/bundle'
 # Binaries
 brew 'git'
 # brew 'mas' # Mac App Store manager
-brew 'yt-dlp'
+# brew 'yt-dlp'
+brew 'starship'
 
 # Fonts
 cask 'font-fira-code'

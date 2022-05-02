@@ -1,0 +1,11 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = false
+
+[character] # The name of the module we are configuring is "character"
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+#disabled = true
+
