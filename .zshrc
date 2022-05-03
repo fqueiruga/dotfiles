@@ -1,9 +1,15 @@
 # Path to your dotfiles.
 export DOTFILES=$HOME/.dotfiles
 
+# Set up autocomplete
+autoload -Uz compinit
+compinit
+
 # Configure starship zsh theme
 eval "$(starship init zsh)"
 
+# Load rbenv
+eval "$(rbenv init - zsh)"
 
 # Configure NVM
 export NVM_DIR="$HOME/.nvm"
