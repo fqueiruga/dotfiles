@@ -32,6 +32,7 @@ cask 'vlc'
 
 # Mac App Store
 mas "Alfred", id: 405843582
+mas "Skitch", id: 425955336
 mas "Telegram Lite", id: 946399090
 mas "WhatsApp Desktop", id: 1147396723 
 
