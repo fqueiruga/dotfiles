@@ -28,6 +28,8 @@ apply_symlinks ".gitconfig"
 
 apply_symlinks "config/starship.toml" ".config/starship.toml"
 
+apply_symlinks "config/zshrc.d" ".config/zshrc.d"
+
 # Update Homebrew recipes
 #brew update
 

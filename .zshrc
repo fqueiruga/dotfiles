@@ -8,7 +8,17 @@ compinit
 # Configure starship zsh theme
 eval "$(starship init zsh)"
 
-# Load rbenv
+# ZSHrc extra config
+ZSHRC_DIR="$HOME/.config/zshrc.d"
+function load_zshrc_config {
+	for conf in "$ZSHRC_DIR/"*.zsh; do
+  		source "${conf}"
+	done
+	unset conf
+}
+[ -d $ZSHRC_DIR ] && load_zshrc_config
+
+# Init ruby
 eval "$(rbenv init - zsh)"
 
 # Configure NVM
