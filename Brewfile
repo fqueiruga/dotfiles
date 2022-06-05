@@ -7,6 +7,7 @@ tap 'homebrew/bundle'
 tap "buo/cask-upgrade"
 tap "yt-dlp/taps"
 tap 'wix/brew' # React Native tools
+tap 'facebook/fb' # React Native tools
 
 # Binaries
 brew 'git'
@@ -23,6 +24,7 @@ brew 'ruby-build'
 brew 'rbenv'
 
 # Fonts
+cask 'flipper'
 cask 'font-fira-code'
 cask 'font-fira-code-nerd-font'
 cask 'font-jetbrains-mono'
