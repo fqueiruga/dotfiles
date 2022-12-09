@@ -5,20 +5,20 @@ tap 'homebrew/cask-fonts'
 tap 'homebrew/cask-versions'
 tap 'homebrew/bundle'
 tap "buo/cask-upgrade"
-tap "yt-dlp/taps"
+#tap "yt-dlp/taps"
 tap 'wix/brew' # React Native tools
 tap 'facebook/fb' # React Native tools
-tap 'aws/tap'
+#tap 'aws/tap'
 
 # Binaries
 brew 'git'
 brew 'gnupg'
-brew 'mas' # Mac App Store manager
+#brew 'mas' # Mac App Store manager
 brew 'openssl@3'
 brew 'starship'
-brew 'ffmpeg'
-brew 'yt-dlp'
-brew 'aws-sam-cli'
+#brew 'ffmpeg'
+#brew 'yt-dlp'
+#brew 'aws-sam-cli'
 
 # Devtools
 brew 'watchman'
@@ -37,11 +37,11 @@ cask 'font-cascadia-code'
 cask 'font-fantasque-sans-mono'
 cask 'font-fantasque-sans-mono-nerd-font'
 cask 'font-iosevka'
-cask '1password'
-cask 'vlc'
+#cask '1password'
+#cask 'vlc'
 
 # Mac App Store
-mas "Alfred", id: 405843582
-mas "Skitch", id: 425955336
-mas "WhatsApp Desktop", id: 1147396723 
+#mas "Alfred", id: 405843582
+#mas "Skitch", id: 425955336
+#mas "WhatsApp Desktop", id: 1147396723 
 
